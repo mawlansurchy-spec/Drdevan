@@ -1,0 +1,6 @@
+{
+  "name": "Dr.Devan",
+  "description": "Analyzes MT5 charts and generates trading signals using Gemini.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
