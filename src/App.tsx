@@ -133,9 +133,9 @@ export default function App() {
     return (
       <div 
         className="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden bg-cover bg-center bg-no-repeat transition-opacity duration-1000 bg-fixed" 
-        style={{ backgroundImage: 'url("https://i.ibb.co/NdxLnfBZ/Picsart-26-06-30-01-45-32-294.jpg")' }}
+        style={{ backgroundImage: 'url("https://i.ibb.co/Ps0KFbvt/Picsart-26-06-30-01-51-46-497.jpg")' }}
       >
-        <div className="absolute inset-0 backdrop-blur-sm bg-black/20"></div>
+        <div className="absolute inset-0 backdrop-blur-[1px] bg-black/10"></div>
         <div className="relative z-10 flex flex-col items-center gap-8 animate-pulse">
           <img src={newLogoImg} alt="Logo" className="w-20 h-20 md:w-28 md:h-28 lg:w-40 lg:h-40 rounded-full border-4 border-emerald-500/50 shadow-[0_0_50px_rgba(16,185,129,0.5)] object-cover transition-all" />
           <div className="text-4xl md:text-6xl font-bold text-white font-poppins drop-shadow-[0_0_20px_rgba(16,185,129,0.8)]">
@@ -156,14 +156,14 @@ export default function App() {
     return (
       <div 
         className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed" 
-        style={{ backgroundImage: 'url("https://i.ibb.co/NdxLnfBZ/Picsart-26-06-30-01-45-32-294.jpg")' }}
+        style={{ backgroundImage: 'url("https://i.ibb.co/Ps0KFbvt/Picsart-26-06-30-01-51-46-497.jpg")' }}
       >
         {/* Blur effect overlay on the entire background */}
-        <div className="absolute inset-0 backdrop-blur-sm bg-black/20"></div>
+        <div className="absolute inset-0 backdrop-blur-[1px] bg-black/10"></div>
 
-        <div className="w-full max-w-[300px] md:max-w-[340px] lg:max-w-[380px] bg-white/10 border border-white/20 rounded-3xl p-6 md:p-8 backdrop-blur-xl relative z-10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] transform transition-all mx-4">
+        <div className="w-full max-w-[260px] sm:max-w-[310px] md:max-w-[340px] lg:max-w-[380px] bg-white/10 border border-white/20 rounded-3xl p-5 sm:p-6 md:p-8 backdrop-blur-xl relative z-10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] transform transition-all mx-4">
           <div className="flex flex-col items-center mb-6">
-            <img src={newLogoImg} alt="Logo" className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full border-2 border-emerald-500/50 shadow-[0_0_20px_rgba(16,185,129,0.3)] object-cover mb-4 transition-all" />
+            <img src={newLogoImg} alt="Logo" className="w-16 h-16 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full border-2 border-emerald-500/50 shadow-[0_0_20px_rgba(16,185,129,0.3)] object-cover mb-4 transition-all" />
 
             <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-3 w-full" dir="rtl">
               <p className="text-amber-400/90 text-[10px] text-center leading-relaxed font-medium">
@@ -229,7 +229,7 @@ export default function App() {
       dir="rtl"
       style={{ backgroundImage: 'url("https://i.ibb.co/NdxLnfBZ/Picsart-26-06-30-01-45-32-294.jpg")' }}
     >
-      <div className="absolute inset-0 bg-[#050608]/30 backdrop-blur-sm z-0"></div>
+      <div className="absolute inset-0 bg-[#050608]/15 backdrop-blur-[0.5px] z-0"></div>
       
       {/* Ambient Background Glows */}
       <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-blue-900/20 rounded-full blur-[120px] pointer-events-none z-0"></div>
