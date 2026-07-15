@@ -71,7 +71,7 @@ export default function App() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (passwordInput === "Dr.devan1@") {
+    if (passwordInput === "Dr.devan11@55") {
       setIsAuthenticated(true);
       setLoginError(false);
     } else {
@@ -92,19 +92,24 @@ export default function App() {
         body: formData,
       });
 
-      if (!res.ok) {
-        throw new Error("Failed to generate signal");
+      const contentType = res.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        throw new Error("سێرڤەر وەڵامێکی نادروستی ناردەوە (کێشە لە پەیوەندی هەیە یان سێرڤەر نوێ دەبێتەوە)");
       }
 
       const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.message || "کێشەیەک ڕوویدا لە کاتی شیکردنەوە");
+      }
+
       if (data.status === "success" && data.item) {
         setCurrentResult(data.item);
       } else {
         alert("هەڵەیەک ڕوویدا لە کاتی شیکردنەوە");
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
-      alert("کێشەیەک هەیە لە پەیوەندیکردن بە سێرڤەر");
+      alert(err.message || "کێشەیەک هەیە لە پەیوەندیکردن بە سێرڤەر");
     } finally {
       setIsUploading(false);
     }
@@ -132,10 +137,10 @@ export default function App() {
   if (showSplash) {
     return (
       <div 
-        className="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden bg-cover bg-center bg-no-repeat transition-opacity duration-1000 bg-fixed" 
+        className="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden bg-cover bg-center bg-no-repeat transition-opacity duration-1000" 
         style={{ backgroundImage: 'url("https://i.ibb.co/Ps0KFbvt/Picsart-26-06-30-01-51-46-497.jpg")' }}
       >
-        <div className="absolute inset-0 backdrop-blur-[1px] bg-black/10"></div>
+        <div className="absolute inset-0 bg-black/5"></div>
         <div className="relative z-10 flex flex-col items-center gap-8 animate-pulse">
           <img src={newLogoImg} alt="Logo" className="w-20 h-20 md:w-28 md:h-28 lg:w-40 lg:h-40 rounded-full border-4 border-emerald-500/50 shadow-[0_0_50px_rgba(16,185,129,0.5)] object-cover transition-all" />
           <div className="text-4xl md:text-6xl font-bold text-white font-poppins drop-shadow-[0_0_20px_rgba(16,185,129,0.8)]">
@@ -155,11 +160,11 @@ export default function App() {
   if (!isAuthenticated) {
     return (
       <div 
-        className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed" 
+        className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden bg-cover bg-center bg-no-repeat" 
         style={{ backgroundImage: 'url("https://i.ibb.co/Ps0KFbvt/Picsart-26-06-30-01-51-46-497.jpg")' }}
       >
         {/* Blur effect overlay on the entire background */}
-        <div className="absolute inset-0 backdrop-blur-[1px] bg-black/10"></div>
+        <div className="absolute inset-0 bg-black/5"></div>
 
         <div className="w-full max-w-[260px] sm:max-w-[310px] md:max-w-[340px] lg:max-w-[380px] bg-white/10 border border-white/20 rounded-3xl p-5 sm:p-6 md:p-8 backdrop-blur-xl relative z-10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] transform transition-all mx-4">
           <div className="flex flex-col items-center mb-6">
@@ -225,11 +230,11 @@ export default function App() {
 
   return (
     <div 
-      className="min-h-screen font-sans text-gray-200 selection:bg-emerald-500/30 selection:text-emerald-200 flex flex-col relative overflow-hidden bg-cover bg-center bg-no-repeat bg-fixed" 
+      className="min-h-screen font-sans text-gray-200 selection:bg-emerald-500/30 selection:text-emerald-200 flex flex-col relative overflow-hidden bg-cover bg-center bg-no-repeat" 
       dir="rtl"
       style={{ backgroundImage: 'url("https://i.ibb.co/NdxLnfBZ/Picsart-26-06-30-01-45-32-294.jpg")' }}
     >
-      <div className="absolute inset-0 bg-[#050608]/15 backdrop-blur-[0.5px] z-0"></div>
+      <div className="absolute inset-0 bg-black/10 z-0"></div>
       
       {/* Ambient Background Glows */}
       <div className="absolute top-[-100px] left-[-100px] w-[400px] h-[400px] bg-blue-900/20 rounded-full blur-[120px] pointer-events-none z-0"></div>
